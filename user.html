@@ -1,0 +1,74 @@
+<html>
+<head>
+<style>
+            body {
+                        background-color:yellow;
+                        background-position: center;
+                        font-family: "Lucida Console", "Courier New", monospace;
+                        background-size: cover;
+                        background-image:url(static/user.jpg);
+                     }        
+
+            h1 {
+                    color: blue;
+                    font-size: 50px;
+            }
+
+            h2 {
+                color: red;
+                padding-left:130px;
+            }
+
+            p {
+                color: red;
+            }
+
+            form {
+                text-shadow: 1px 1px;
+            }
+        </style>
+</head>
+
+<body>
+    <div class="login">
+        <center>
+ <h1><b>UNIVERSITY ADMISSION PREDICTION SYSTEM</b><span class="labellabel-default"></span></h1>
+        </center>
+        <h2>Enter your details and get probability of your admission <span class="label labeldefault"></span></h2><br>
+        
+        <form action="{{ url_for('y_predict')}}" method="post">
+            <center>
+         <b>Enter GRE Score:</b><input type="text" name="gre" placeholder="GRE Score
+(out of 340)" required="required" /><br><br>
+                <b>Enter TOEFL Score:</b> <input type="text" name="toefl" placeholder="TOEFL Score
+(out of 120)" required="required" /><br><br>
+                <b>Select University no:</b><br>
+                 <input type="radio" name="rating" value="1"> 1 <br>
+                <input type="radio" name="rating" value="2"> 2 <br>
+                <input type="radio" name="rating" value="3"> 3<br>
+                <input type="radio" name="rating" value="4"> 4 <br>
+                <input type="radio" name="rating" value="5"> 5 <br><br>
+                <b>Enter SOP:</b><input type="text" name="sop" placeholder="SOP (out of 5)"
+                    required="required" /><br><br>
+                <b>Enter LOR:</b><input type="text" name="lor" placeholder="LOR (out of 5)"
+                    required="required" /><br><br>
+                <b>Enter CGPA:</b><input type="text" name="cgpa" placeholder="CGPA (out of 10)"
+                    required="required" /><br><br>
+                <b>Research:</b><br>
+                 <input type="radio" name="research" value="1"><b>Research</b>
+                <input type="radio" name="research" value="0"><b>NO Research</b>
+                <br><br>
+                <b>Parttime Jobs:</b><br>
+                <input type="radio" name="job" value="1"> 1 
+                <input type="radio" name="job" value="2"> 2 
+                <input type="radio" name="job" value="3"> 3
+                <input type="radio" name="job" value="4"> 4 
+                <input type="radio" name="job" value="5"> 5 
+
+                <button type="submit" class="btn btn-default"><b>Predict</b></button>
+            </center>
+        </form>
+       
+    </div>
+</body>
+</html> 
